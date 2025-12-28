@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "transparent-overlay"
-version = "2.7.0rc1"
+version = "2.7.2"
 
 authors = [
   { name = "Ilya Yakovenko", email = "ilya.a.yakovenko@gmail.com" },

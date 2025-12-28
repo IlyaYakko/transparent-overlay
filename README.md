@@ -8,32 +8,26 @@
 [![OS: Windows](https://img.shields.io/badge/OS-Windows-0078D6)](#requirements)
 
 High-performance transparent graphics overlay for Windows.  
-True per-pixel transparency, double buffering, cached sprites, thread-safe render loop, and optional Numba acceleration.
+True per-pixel transparency, double buffering, cached sprites, thread-safe render loop, and **automatic Numba acceleration** (~10x faster rendering).
 
 ## Features
 
-- True desktop transparency using layered windows (UpdateLayeredWindow)
+- True desktop transparency using layered windows (`UpdateLayeredWindow`)
 - Smooth, flicker-free rendering with double buffering
-- Cached sprites: shapes, lines, text, and custom NumPy RGBA
-- Thread-safe: logic thread + dedicated render thread
-- Built-in diagnostics: FPS and per-frame statistics
-- Optional Numba speedup package
+- Cached sprites: shapes, lines, text, and custom NumPy RGBA arrays
+- Thread-safe: separate logic and dedicated render thread
+- Built-in diagnostics: FPS counter and per-frame statistics
+- **Automatic Numba acceleration** (installed by default, with graceful NumPy fallback)
 
 ## Installation
 
-Basic:
-
 ```bash
 pip install transparent-overlay
-````
-
-With acceleration:
-
-```bash
-pip install "transparent-overlay[speedup]"
 ```
 
-Examples:
+This installs the core library with **Numba included** for maximum performance.
+
+For running the examples (additional dependencies):
 
 ```bash
 pip install "transparent-overlay[examples]"
@@ -45,7 +39,6 @@ pip install "transparent-overlay[examples]"
 from transparent_overlay import Overlay
 
 with Overlay() as overlay:
-
     overlay.draw_circle(200, 150, 50, (255, 0, 0, 180))
     overlay.draw_rect(350, 100, 120, 80, (0, 0, 255, 160))
     overlay.draw_line(500, 100, 650, 180, (0, 255, 0, 255), thickness=3)
@@ -59,21 +52,31 @@ with Overlay() as overlay:
 
 ## Use cases
 
-* Real-time HUD overlays
-* On-screen debugging for AI / CV applications
-* Desktop widgets and transparent UI elements
-* Stream/recording overlays
-* Graphics experiments and educational demos
+- Real-time HUD overlays
+- On-screen debugging for AI / computer vision applications
+- Desktop widgets and transparent UI elements
+- Streaming and recording overlays
+- Graphics experiments and educational demos
 
 ## Documentation
 
-* Full documentation: [DOCUMENTATION.md](https://github.com/IlyaYakko/transparent-overlay/blob/main/DOCUMENTATION.md)
-* Examples: [**examples/** folder on GitHub](https://github.com/IlyaYakko/transparent-overlay/tree/main/examples)
+- Full documentation: [DOCUMENTATION.md](https://github.com/IlyaYakko/transparent-overlay/blob/main/DOCUMENTATION.md)
+- Examples and demos: [**examples/** folder on GitHub](https://github.com/IlyaYakko/transparent-overlay/tree/main/examples)
+- Media assets (screenshots, GIFs, videos): [**assets/** folder on GitHub](https://github.com/IlyaYakko/transparent-overlay/tree/main/assets)
+
+## Performance
+
+The library automatically uses **Numba** for significantly faster pixel operations (up to 10x speedup).  
+If Numba is unavailable for any reason, it seamlessly falls back to pure NumPy — functionality remains fully intact.
 
 ## Requirements
 
-* OS: **Windows 7+**
-* Python: **3.7–3.13**
-* GPU/driver must support layered windows (all modern Windows systems do)
+- **OS**: Windows 7 or later
+- **Python**: 3.7 and above
+- Hardware must support layered windows (all modern Windows systems do)
 
-> Note: This package is Windows-only. On other platforms `import transparent_overlay` will fail by design.
+> Note: This package is Windows-only. Importing on other platforms will raise an error by design.
+
+## License
+
+[MIT License](LICENSE) — free for commercial and personal use.

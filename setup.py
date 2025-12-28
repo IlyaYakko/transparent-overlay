@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="transparent-overlay",
-    version="2.7.1",
+    version="2.7.2",
     author="Илья Яковенко",
     author_email="ilya.a.yakovenko@gmail.com",
     description="High-performance transparent graphics overlay for Windows",

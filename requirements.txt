@@ -1,5 +1,4 @@
-numpy>=1.21
-Pillow>=9.0.0
-pywin32>=300; platform_system=="Windows"
-# Optional speedup for local dev:
-# numba>=0.56.0
+numpy>=1.19.0
+Pillow>=8.0.0
+pywin32>=300; platform_system == "Windows"
+numba>=0.56.0
