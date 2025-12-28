@@ -1,6 +1,6 @@
 from .core import Overlay
 
-__version__ = "2.7.0rc1"
+__version__ = "2.7.0rc2"
 __author__ = "Ilya Yakovenko"
 __email__ = "ilya.a.yakovenko@gmail.com"
 
