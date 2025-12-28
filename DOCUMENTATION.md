@@ -1,16 +1,18 @@
 # Transparent Overlay — Full Documentation
 
-> Note: the images and demos below use placeholders. Replace them with real files in `assets/images`, `assets/gifs`,
-`assets/videos`.
+![Hero](https://raw.githubusercontent.com/IlyaYakko/transparent-overlay/main/assets/images/hero_placeholder.png)
 
-![Hero](assets/images/hero_placeholder.png)
+### Media demos
 
-## Media demos
+All visual demos, screenshots, GIFs, and videos are stored in the repository:
 
-- Basic shapes screenshot: `assets/images/basic_shapes_placeholder.png`
-- GIF demo of fast rendering: `assets/gifs/demo_basic_placeholder.gif`
-- Video demo of examples: `assets/videos/overview_placeholder.mp4`
+👉 [**assets/** folder on GitHub](https://github.com/IlyaYakko/transparent-overlay/tree/main/assets)
 
+- Screenshots: `assets/images/` (e.g., basic shapes, text rendering, transparency layers)
+- Animated demos: `assets/gifs/` (e.g., fast rendering loop)
+- Video overview & benchmarks: `assets/videos/` (e.g., performance benchmark)
+
+Feel free to explore the folder for real examples and placeholders used in this documentation.
 ---
 
 A high-performance library for creating transparent overlays on Windows with hardware-accelerated rendering and
@@ -53,7 +55,7 @@ with Overlay() as overlay:
     input("Press Enter to exit...")
 ```
 
-Full example: [examples/education/education_01_basic_shapes.py](examples/education/education_01_basic_shapes.py)
+Full example: [examples/education/education_01_basic_shapes.py](https://github.com/IlyaYakko/transparent-overlay/blob/main/examples/education/education_01_basic_shapes.py)
 
 ### Manual control
 
@@ -71,7 +73,7 @@ finally:
 ```
 
 More on both
-approaches: [examples/education/education_04_context_and_manual.py](examples/education/education_04_context_and_manual.py)
+approaches: [examples/education/education_04_context_and_manual.py](https://github.com/IlyaYakko/transparent-overlay/blob/main/examples/education/education_04_context_and_manual.py)
 
 ## 🎮 Layer control
 
@@ -165,7 +167,7 @@ overlay.draw_text(
 ```
 
 Full parameters —
-see [examples/education/education_03_text_rendering.py](examples/education/education_03_text_rendering.py).
+see [examples/education/education_03_text_rendering.py](https://github.com/IlyaYakko/transparent-overlay/blob/main/examples/education/education_03_text_rendering.py).
 
 ## 🔧 Low-level methods
 
@@ -218,7 +220,7 @@ overlay.create_sprite_from_numpy(gradient, gradient_key)
 overlay.add_sprite_instance(gradient_key, 500, 500)
 ```
 
-Examples: [examples/education/education_05_sprite_management.py](examples/education/education_05_sprite_management.py), [examples/education/education_08_advanced_sprites.py](examples/education/education_08_advanced_sprites.py), [examples/education/education_09_custom_numpy_sprite.py](examples/education/education_09_custom_numpy_sprite.py).
+Examples: [examples/education/education_05_sprite_management.py](https://github.com/IlyaYakko/transparent-overlay/blob/main/examples/education/education_05_sprite_management.py), [examples/education/education_08_advanced_sprites.py](https://github.com/IlyaYakko/transparent-overlay/blob/main/examples/education/education_08_advanced_sprites.py), [examples/education/education_09_custom_numpy_sprite.py](https://github.com/IlyaYakko/transparent-overlay/blob/main/examples/education/education_09_custom_numpy_sprite.py).
 
 ### Sprite cache management
 
@@ -256,7 +258,7 @@ removed = overlay.sprite_clear_expired(max_age=10.0)
 overlay.sprite_clear_cache()
 ```
 
-See example: [examples/education/education_10_ttl_cache_demo.py](examples/education/education_10_ttl_cache_demo.py).
+See example: [examples/education/education_10_ttl_cache_demo.py](https://github.com/IlyaYakko/transparent-overlay/blob/main/examples/education/education_10_ttl_cache_demo.py).
 
 ⚠ **Note:**
 Auto-TTL cleanup runs periodically in the render loop.
@@ -281,7 +283,7 @@ sprite_info = overlay.get_sprite_cache_info(sprite_key)
 ```
 
 Usage
-example: [examples/education/education_05_sprite_management.py](examples/education/education_05_sprite_management.py).
+example: [examples/education/education_05_sprite_management.py](https://github.com/IlyaYakko/transparent-overlay/blob/main/examples/education/education_05_sprite_management.py).
 
 ## 🧾 Logging
 
@@ -324,7 +326,7 @@ pytest -q -o log_cli_level=DEBUG
 ```
 
 Minimal logger
-demo: [examples/education/education_12_logger_minimal_demo.py](examples/education/education_12_logger_minimal_demo.py)
+demo: [examples/education/education_12_logger_minimal_demo.py](https://github.com/IlyaYakko/transparent-overlay/blob/main/examples/education/education_12_logger_minimal_demo.py)
 It shows lifecycle INFO messages and representative WARNING/DEBUG diagnostics (invalid anchor/box_size, off-screen and
 missing sprites, color clamping, safe removal of non-existent sprite).
 
@@ -332,7 +334,7 @@ missing sprites, color clamping, safe removal of non-existent sprite).
 
 Robustness and smoke tests cover import, API surface, lifecycle, cache/TTL, text edge cases, and concurrency.
 
-- Test suite: [tests/test_robustness.py](tests/test_robustness.py)
+- Test suite: [tests/test_robustness.py](https://github.com/IlyaYakko/transparent-overlay/blob/main/tests/test_robustness.py)
 - Run with PowerShell (virtualenv recommended):
 
 ```powershell
@@ -421,7 +423,7 @@ python -m pytest -q -o log_cli_level=DEBUG
 
 ### Diagrams
 
-![Overlay Render Pipeline](assets/images/overlay_render_pipeline.png)
+![Overlay Render Pipeline](https://raw.githubusercontent.com/IlyaYakko/transparent-overlay/main/assets/images/overlay_render_pipeline.png)
 The overlay render pipeline shows how your thread enqueues draw calls and sprite instances, and how the render thread swaps buffers, composites sprites, updates the layered window, and maintains the sprite cache with TTL cleanup.
 
 ## ⚡ Performance

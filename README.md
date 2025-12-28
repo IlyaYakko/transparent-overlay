@@ -67,8 +67,8 @@ with Overlay() as overlay:
 
 ## Documentation
 
-* Full documentation: [DOCUMENTATION.md](DOCUMENTATION.md)
-* Examples: see the `examples/` folder
+* Full documentation: [DOCUMENTATION.md](https://github.com/IlyaYakko/transparent-overlay/blob/main/DOCUMENTATION.md)
+* Examples: [**examples/** folder on GitHub](https://github.com/IlyaYakko/transparent-overlay/tree/main/examples)
 
 ## Requirements
 
