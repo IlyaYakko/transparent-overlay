@@ -1,0 +1,63 @@
+title Transparent Overlay Render Pipeline
+direction right
+
+// Groups and nodes
+User Thread [icon: user, color: lightblue] {
+  Draw API Call [icon: edit, color: lightblue]
+  Create or Get Sprite [icon: image, color: lightblue]
+  Add Sprite Instance [icon: plus-square, color: lightblue]
+  Signal Render [icon: bell, color: blue]
+}
+
+Render Thread [icon: monitor, color: orange] {
+  Wait for Render Event [icon: clock, color: orange]
+  Clear Buffers [icon: trash-2, color: orange]
+  Cleanup Expired Sprites [icon: x-circle, color: orange]
+  Iterate Sprite Instances [icon: repeat, color: orange]
+  Blit Sprite into Buffer [icon: layers, color: orange]
+  Swap Buffers [icon: refresh-cw, color: orange]
+  Update Layered Window [icon: monitor, color: orange]
+}
+
+Sprite Cache [icon: database, color: purple] {
+  Lookup Sprite in Cache [icon: search, color: purple]
+  Store Sprite in Cache [icon: save, color: purple]
+  Clear Expired Sprites [icon: x, color: purple]
+}
+
+Double Buffering [icon: columns, color: green] {
+  Front Buffer [icon: square, color: green]
+  Back Buffer [icon: square, color: green]
+}
+transparent_overlay package [icon:package, color:gray]
+
+// User Thread Flow
+Draw API Call -> Create or Get Sprite: [color: #3498db]
+Create or Get Sprite -> Add Sprite Instance: [color: #3498db]
+Add Sprite Instance -> Signal Render: [color: #3498db]
+
+// Render Thread Flow
+Signal Render -> Wait for Render Event: [color: #e74c3c]
+Wait for Render Event -> Clear Buffers: [color: #3498db]
+Clear Buffers -> Cleanup Expired Sprites: [color: #3498db]
+Cleanup Expired Sprites -> Iterate Sprite Instances: [color: #3498db]
+
+Iterate Sprite Instances -> Blit Sprite into Buffer: [color: #3498db]
+Blit Sprite into Buffer -> Back Buffer: [color: #27ae60]
+
+Iterate Sprite Instances -> Swap Buffers: [color: #3498db]
+Swap Buffers -> Front Buffer: [color: #27ae60]
+Swap Buffers -> Update Layered Window: [color: #3498db]
+Update Layered Window -> Front Buffer: [color: #27ae60]
+
+// Cache Maintenance
+Create or Get Sprite -> Lookup Sprite in Cache: [color: #9b59b6]
+Lookup Sprite in Cache -> Store Sprite in Cache: miss [color: #9b59b6]
+Store Sprite in Cache -> Create or Get Sprite: return sprite [color: #9b59b6]
+Lookup Sprite in Cache -> Create or Get Sprite: hit [color: #9b59b6]
+Lookup Sprite in Cache -> Blit Sprite into Buffer: get sprite data [color: #9b59b6]
+Cleanup Expired Sprites -> Clear Expired Sprites: [color: #9b59b6]
+
+// External connections
+transparent_overlay package -> User Thread: [color: gray]
+transparent_overlay package -> Render Thread: [color: gray]
