@@ -1,6 +1,6 @@
 # Transparent Overlay
 
-![Hero](assets/images/hero_placeholder.png)
+![Hero](https://raw.githubusercontent.com/IlyaYakko/transparent-overlay/main/assets/images/hero_placeholder.png)
 
 [![PyPI version](https://img.shields.io/pypi/v/transparent-overlay.svg)](https://pypi.org/project/transparent-overlay/)
 [![Python versions](https://img.shields.io/pypi/pyversions/transparent-overlay.svg)](https://pypi.org/project/transparent-overlay/)
@@ -55,7 +55,7 @@ with Overlay() as overlay:
     input("Press Enter to exit...")
 ```
 
-![Demo](assets/gifs/demo_basic_placeholder.gif)
+![Demo](https://raw.githubusercontent.com/IlyaYakko/transparent-overlay/main/assets/gifs/demo_basic_placeholder.gif)
 
 ## Use cases
 
