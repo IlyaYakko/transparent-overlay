@@ -443,8 +443,23 @@ If Numba is not available, a “slow mode” is used with a warning in logs. The
 📁 transparent-overlay — project root
 ├── 📁 assets — media assets for README and demos
 │   ├── 📁 gifs
+│   │   └── 📄 demo_basic_placeholder.gif
 │   ├── 📁 images
+│   │   ├── 📄 basic_shapes_placeholder.png
+│   │   ├── 📄 face_detection_console_debug.png
+│   │   ├── 📄 face_detection_overlay_debug.png
+│   │   ├── 📄 hero_placeholder.png
+│   │   ├── 📄 overlay_render_pipeline.png
+│   │   ├── 📄 python-logo.png
+│   │   ├── 📄 text_rendering.png
+│   │   └── 📄 transparency_layers.png
+│   ├── 📁 other
+│   │   ├── 📄 demo_numpy_gif.py
+│   │   ├── 📄 hero_placeholder.py
+│   │   ├── 📄 overlay_render_pipeline.txt
+│   │   └── 📄 test.py
 │   └── 📁 videos
+│       └── 📄 overlay-benchmark.mp4
 ├── 📁 examples — usage examples
 │   ├── 📁 cases — practical cases (mini apps)
 │   │   ├── 📄 case_01_mouse_tracker.py
@@ -455,7 +470,7 @@ If Numba is not available, a “slow mode” is used with a warning in logs. The
 │   │   ├── 📄 case_06_cannon_game.py
 │   │   ├── 📄 case_07_performance_benchmark.py
 │   │   ├── 📄 case_08_brightness_controller.py
-│   │   └── 📄 case_09_face_detection_demo.py
+│   │   └── 📄 case_09_face_detection.py
 │   └── 📁 education — step-by-step educational examples
 │       ├── 📄 education_01_basic_shapes.py
 │       ├── 📄 education_02_transparency_layers.py
@@ -472,15 +487,15 @@ If Numba is not available, a “slow mode” is used with a warning in logs. The
 ├── 📁 tests — project tests
 │   └── 📄 test_robustness.py — import/smoke + robustness/error handling
 ├── 📁 transparent_overlay — library source code
-│   ├── 📄 core.py — main module: window layer, render loop, buffers, sprites, text
-│   └── 📄 __init__.py — public API (exports)
+│   ├── 📄 __init__.py — public API (exports)
+│   └── 📄 core.py — main module: window layer, render loop, buffers, sprites, text
+├── 📄 .gitignore — ignored files and directories
 ├── 📄 LICENSE — project license (MIT)
 ├── 📄 MANIFEST.in — package data and non-Python files to include in distribution
 ├── 📄 pyproject.toml — package metadata, build and dependencies
 ├── 📄 pytest.ini — pytest configuration
 ├── 📄 README.md — documentation and examples
-├── 📄 requirements.txt — dependencies (dev/examples)
-└── 📄 setup.py — package build/install script
+└── 📄 requirements.txt — dependencies (dev/examples)
 ```
 
 ## 🔧 Requirements
