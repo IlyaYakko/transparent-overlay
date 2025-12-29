@@ -1,3 +1,15 @@
+"""
+education_06_dynamic_text_sizing.py
+Dynamic Text Sizing and Management Demo
+
+Demonstrates:
+- Dynamic text rendering with automatic font size adjustment
+- Real-time text updates with smooth animations
+- Cache management for optimal performance
+- Visual feedback for sprite bounds and rendering
+- Memory-efficient text handling
+"""
+
 import time
 import math
 from transparent_overlay import Overlay
@@ -33,7 +45,7 @@ def main():
 
             # Dynamic text and font size
             stats_text, _ = overlay.get_render_statistics()
-            stats_text += f'\nTotal Sprites: {len(overlay.sprite_pixels)}'
+            stats_text += f'\nTotal Sprites: {len(overlay.sprite_cache)}'
             dynamic_font_size = 30 + int(10 * math.sin(frame * 0.05))
 
             # Remove previous sprite to avoid cache growth

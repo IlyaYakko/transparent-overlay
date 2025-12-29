@@ -60,8 +60,8 @@ class Bullet:
 
         old_x, old_y = self.x, self.y
 
-        self.x += self.vx * dt
-        self.y += self.vy * dt
+        self.x = int(self.x + self.vx * dt)
+        self.y = int(self.y + self.vy * dt)
         self.vy += 500 * dt
 
         collision_occurred = False
@@ -289,7 +289,7 @@ def main():
 
                 if bullet.active:
                     active_bullets += 1
-                    overlay.draw_circle(bullet.x, bullet.y, bullet.radius, bullet.color)
+                    overlay.draw_circle(int(bullet.x), int(bullet.y), bullet.radius, bullet.color)
 
                     if collision_occurred and border_side:
                         heating_system.add_impact(bullet, border_side, old_x, old_y)

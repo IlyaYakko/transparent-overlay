@@ -21,3 +21,5 @@ env/
 # Testing cache
 .pytest_cache/
 .coverage
+
+examples/cases/data/

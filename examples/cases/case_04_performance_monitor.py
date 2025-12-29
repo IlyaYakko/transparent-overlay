@@ -83,8 +83,8 @@ class SystemMonitor:
             points.append((x_pos, y_pos))
 
         for i in range(len(points) - 1):
-            self.overlay.draw_line(points[i][0], points[i][1],
-                                   points[i + 1][0], points[i + 1][1], color, 2)
+            self.overlay.draw_line(int(points[i][0]), int(points[i][1]),
+                                   int(points[i + 1][0]), int(points[i + 1][1]), color, 2)
 
     def draw_gauge(self, x, y, size, value, color, label):
         """Draw a circular gauge with dense fill"""
@@ -101,7 +101,7 @@ class SystemMonitor:
                 angle = math.radians(i * degrees_per_segment - 90)  # Start from top
                 end_x = x + (size - 3) * math.cos(angle)
                 end_y = y + (size - 3) * math.sin(angle)
-                self.overlay.draw_line(x, y, end_x, end_y, color, 2)
+                self.overlay.draw_line(x, y, int(round(end_x)), int(round(end_y)), color, 2)
 
         # Text below the gauge
         self.overlay.draw_text(x, y + size + 10, f"{value:.1f}%",

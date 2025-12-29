@@ -1,17 +1,18 @@
 [build-system]
-requires = ["setuptools>=45", "wheel"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "transparent-overlay"
-version = "2.7.2"
-
+version = "2.8.0"
 authors = [
-  { name = "Ilya Yakovenko", email = "ilya.a.yakovenko@gmail.com" },
+  { name = "Илья Яковенко", email = "ilya.a.yakovenko@gmail.com" },
 ]
 description = "High-performance transparent graphics overlay for Windows"
 readme = "README.md"
 requires-python = ">=3.7"
+license = { text = "MIT" }
+keywords = ["overlay", "graphics", "transparent", "windows", "gdi", "hud", "performance"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -25,18 +26,21 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
 ]
-keywords = ["overlay", "graphics", "transparent", "windows", "gdi"]
+
 dependencies = [
     "numpy>=1.19.0",
     "Pillow>=8.0.0",
     "pywin32>=300; sys_platform == 'win32'",
+    "numba>=0.56.0",
 ]
 
 [project.optional-dependencies]
-speedup = ["numba>=0.56"]
-examples = ["psutil>=5.8.0", "pyautogui>=0.9.0"]
-
-
-[project.license]
-text = "MIT"
+examples = [
+    "psutil>=5.8.0",
+    "pyautogui>=0.9.0",
+    "matplotlib>=3.10.8",
+    "opencv-contrib-python>=4.5.0",
+    "mss>=3.0.0",
+]

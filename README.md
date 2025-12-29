@@ -8,7 +8,8 @@
 [![OS: Windows](https://img.shields.io/badge/OS-Windows-0078D6)](#requirements)
 
 High-performance transparent graphics overlay for Windows.  
-True per-pixel transparency, double buffering, cached sprites, thread-safe render loop, and **automatic Numba acceleration** (~10x faster rendering).
+True per-pixel transparency, double buffering, cached sprites, thread-safe render loop, and **automatic Numba
+acceleration** (~10x faster rendering).
 
 ## Features
 
@@ -22,30 +23,53 @@ True per-pixel transparency, double buffering, cached sprites, thread-safe rende
 ## Installation
 
 ```bash
+
 pip install transparent-overlay
+
 ```
 
-This installs the core library with **Numba included** for maximum performance.
+This installs the core library with **Numba included** for maximum performance (~10x faster rendering).
 
-For running the examples (additional dependencies):
+## Examples
+
+The library comes with rich educational and practical examples demonstrating all features.
+
+To run them:
 
 ```bash
+
 pip install "transparent-overlay[examples]"
+
+git clone https://github.com/IlyaYakko/transparent-overlay.git
+
+cd transparent-overlay/examples && python education/education_01_basic_shapes.py
+
 ```
+
+All examples and media assets are available in the [examples/
+folder on GitHub](https://github.com/IlyaYakko/transparent-overlay/tree/main/examples).
+
+**Note**: The face detection example automatically downloads the required Haar Cascade file on first run if needed.
 
 ## Quick start
 
 ```python
+
 from transparent_overlay import Overlay
 
 with Overlay() as overlay:
     overlay.draw_circle(200, 150, 50, (255, 0, 0, 180))
+
     overlay.draw_rect(350, 100, 120, 80, (0, 0, 255, 160))
+
     overlay.draw_line(500, 100, 650, 180, (0, 255, 0, 255), thickness=3)
+
     overlay.draw_text(400, 50, "Basic Shapes", color=(255, 255, 255, 255), font_size=50)
 
     overlay.signal_render()
+
     input("Press Enter to exit...")
+
 ```
 
 ![Demo](https://raw.githubusercontent.com/IlyaYakko/transparent-overlay/main/assets/gifs/demo_basic_placeholder.gif)
@@ -61,8 +85,10 @@ with Overlay() as overlay:
 ## Documentation
 
 - Full documentation: [DOCUMENTATION.md](https://github.com/IlyaYakko/transparent-overlay/blob/main/DOCUMENTATION.md)
-- Examples and demos: [**examples/** folder on GitHub](https://github.com/IlyaYakko/transparent-overlay/tree/main/examples)
-- Media assets (screenshots, GIFs, videos): [**assets/** folder on GitHub](https://github.com/IlyaYakko/transparent-overlay/tree/main/assets)
+- Examples and demos: [examples/
+  folder on GitHub](https://github.com/IlyaYakko/transparent-overlay/tree/main/examples)
+- Media assets (screenshots, GIFs, videos): [assets/
+  folder on GitHub](https://github.com/IlyaYakko/transparent-overlay/tree/main/assets)
 
 ## Performance
 

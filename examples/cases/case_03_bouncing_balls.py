@@ -1,5 +1,5 @@
 """
-06_bouncing_balls.py
+case_03_bouncing_balls.py
 Animated bouncing balls — performance test
 
 Demonstrates:

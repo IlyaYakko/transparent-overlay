@@ -20,7 +20,7 @@ def main():
         rect_blue = overlay.create_rect_sprite(80, 40, (80, 140, 255, 180))
 
         t0 = time.time()
-        duration = 5  # секунд
+        duration = 4  # seconds
         frame = 0
 
         while time.time() - t0 < duration:

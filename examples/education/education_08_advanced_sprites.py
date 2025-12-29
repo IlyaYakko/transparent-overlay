@@ -271,7 +271,7 @@ def main():
         last_cache_size = len(overlay.sprite_cache)
         stable_frames = 0
 
-        while time.time() - start_time < 20:  # 20 секунд демонстрации
+        while time.time() - start_time < 20:  # seconds
             overlay.frame_clear()
 
             # === 1. STATIC CUSTOM SPRITES ===
@@ -285,7 +285,6 @@ def main():
 
             # === 2. DYNAMIC ANIMATED SPRITES ===
 
-            # Обновляем анимированную текстуру (старая автоматически удаляется)
             animated_sprite = sprite_manager.update_animated_sprite(frame)
             if animated_sprite:
                 overlay.add_sprite_instance(animated_sprite, 50, 200)
