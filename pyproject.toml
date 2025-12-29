@@ -44,3 +44,6 @@ examples = [
     "opencv-contrib-python>=4.5.0",
     "mss>=3.0.0",
 ]
+
+[tool.setuptools]
+packages = ["transparent_overlay"]
